@@ -1,0 +1,7 @@
+/**/*.bin
+/**/*.lock
+/**/*.properties
+/**/*.gitignore
+/**/*.xml
+/**/*.jar
+/**/*.class
