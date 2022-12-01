@@ -1,0 +1,11 @@
+apply plugin: 'java' // gradle java 플러그인 적용
+
+compileJava.options.encoding = "UTF-8" // 소스 코드 인코딩
+
+repositories { // 의존 모듈을 메이븐 중앙 리포지토리에서 다운로드
+    mavenCentral()
+}
+
+dependencies {  // spring-context 모듈에 대한 의존 설정
+    implementation 'org.springframework:spring-context:5.0.2.RELEASE'
+}
