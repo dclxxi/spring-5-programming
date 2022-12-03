@@ -1,10 +1,15 @@
 package spring;
 
 import java.time.LocalDateTime;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MemberRegisterService {
     
+    @Autowired
     private MemberDao memberDao;
+    
+    public MemberRegisterService() { // AppCtx 클래스에서 기본 생성자를 이용해 객체를 생성하기 위해
+    }
     
     public MemberRegisterService(MemberDao memberDao) {
         this.memberDao = memberDao;
