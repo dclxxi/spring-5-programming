@@ -1,10 +1,12 @@
 package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component // 빈 이름 : changePasswordService
 public class ChangePasswordService {
     
-    @Autowired 
+    @Autowired
     private MemberDao memberDao;
     
     public void changePassword(String email, String oldPwd, String newPwd) {

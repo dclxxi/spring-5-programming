@@ -1,9 +1,13 @@
 package spring;
 
+import config.ManualBean;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
+@ManualBean
+@Component // 해당 클래스를 스캔 대상으로 표시 (스프링이 검색해서 빈으로 등록 가능)
 public class MemberDao {
     
     private static long nextId = 0;

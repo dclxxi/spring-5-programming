@@ -2,7 +2,9 @@ package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("infoPrinter") // 빈 이름 : infoPrinter
 public class MemberInfoPrinter {
     
     private MemberDao memDao;
@@ -18,13 +20,13 @@ public class MemberInfoPrinter {
         System.out.println();
     }
     
-    @Autowired 
+    @Autowired
     public void setMemberDao(MemberDao memberDao) {
         this.memDao = memberDao;
     }
     
-    @Autowired 
-    @Qualifier("printer") 
+    @Autowired
+    @Qualifier("printer")
     public void setPrinter(MemberPrinter printer) {
         this.printer = printer;
     }

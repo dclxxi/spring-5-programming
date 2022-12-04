@@ -1,20 +1,21 @@
-package spring;
+package spring2;
 
+import config.NoProduct;
 import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import spring.DuplicateMemberException;
+import spring.Member;
+import spring.MemberDao;
+import spring.RegisterRequest;
 
-@Component // 빈 이름 : memberRegisterService
+@NoProduct
+@Component
 public class MemberRegisterService {
     
-    @Autowired
     private MemberDao memberDao;
     
     public MemberRegisterService() {
-    }
-    
-    public MemberRegisterService(MemberDao memberDao) {
-        this.memberDao = memberDao;
     }
     
     public Long regist(RegisterRequest req) {
@@ -26,4 +27,10 @@ public class MemberRegisterService {
         memberDao.insert(newMember);
         return newMember.getId();
     }
+    
+    @Autowired
+    public void setMemberDao(MemberDao memberDao) {
+        this.memberDao = memberDao;
+    }
+    
 }
