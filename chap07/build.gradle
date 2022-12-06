@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+compileJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-context:5.0.2.RELEASE'
+    implementation 'org.aspectj:aspectjweaver:1.8.13'
+}
+
+wrapper {
+    gradleVersion = '4.4'
+}
