@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+  <appender class="ch.qos.logback.core.ConsoleAppender" name="stdout">
+    <encoder>
+      <pattern>%d %5p %c{2} - %m%n</pattern>
+    </encoder>
+  </appender>
+  <logger level="DEBUG" name="org.springframework.jdbc"/>
+
+  <root level="INFO">
+    <appender-ref ref="stdout"/>
+  </root>
+  <!-- 스프링 JDBC 관련 모듈에서 출력하는 로그메시지를 상세하게 보기 위한 설정 -->
+</configuration>

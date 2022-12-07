@@ -5,3 +5,6 @@
 /**/*.xml
 /**/*.jar
 /**/*.class
+/**/*.MF
+!/**/logback.xml
+
