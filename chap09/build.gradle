@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'war' // 자바 웹 어플리키에션을 위한 플러그인
+apply plugin: 'eclipse-wtp'
+
+compileJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0' // 스프링을 이용해서 웹 어플리케이션 개발하는 데 필요한 의존 설정
+    providedRuntime 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.2-b02'
+    implementation 'javax.servlet:jstl:1.2'
+    implementation 'org.springframework:spring-webmvc:5.0.2.RELEASE' // 스프링 MVC
+}
+
+wrapper {
+    gradleVersion = '4.4'
+}

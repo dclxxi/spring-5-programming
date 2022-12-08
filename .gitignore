@@ -7,4 +7,5 @@
 /**/*.class
 /**/*.MF
 !/**/logback.xml
-
+!/**/web.xml
+/**/out/
