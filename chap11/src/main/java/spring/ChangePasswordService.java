@@ -16,7 +16,6 @@ public class ChangePasswordService {
         member.changePassword(oldPwd, newPwd);
         
         memberDao.update(member);
-        
     }
     
     public void setMemberDao(MemberDao memberDao) {
