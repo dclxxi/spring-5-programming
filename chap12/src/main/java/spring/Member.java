@@ -17,12 +17,12 @@ public class Member {
         this.registerDateTime = regDateTime;
     }
     
-    public Long getId() {
-        return id;
-    }
-    
     void setId(Long id) {
         this.id = id;
+    }
+    
+    public Long getId() {
+        return id;
     }
     
     public String getEmail() {
