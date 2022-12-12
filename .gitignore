@@ -9,3 +9,4 @@
 !/**/logback.xml
 !/**/web.xml
 /**/out/
+!/**/label*.properties
