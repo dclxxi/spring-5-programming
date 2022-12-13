@@ -17,12 +17,12 @@ public class Member {
         this.registerDateTime = regDateTime;
     }
     
-    void setId(Long id) {
-        this.id = id;
-    }
-    
     public Long getId() {
         return id;
+    }
+    
+    void setId(Long id) {
+        this.id = id;
     }
     
     public String getEmail() {
@@ -46,6 +46,10 @@ public class Member {
             throw new WrongIdPasswordException();
         }
         this.password = newPassword;
+    }
+    
+    public boolean matchPassword(String password) {
+        return this.password.equals(password);
     }
     
 }
