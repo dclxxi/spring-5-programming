@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebMvc
+@EnableWebMvc // DefaultFormattingConversionService를 ConversionService로 사용
 public class MvcConfig implements WebMvcConfigurer {
     
     @Override
@@ -33,8 +33,7 @@ public class MvcConfig implements WebMvcConfigurer {
     
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authCheckInterceptor())
-                .addPathPatterns("/edit/**")
+        registry.addInterceptor(authCheckInterceptor()).addPathPatterns("/edit/**")
                 .excludePathPatterns("/edit/help/**");
     }
     
