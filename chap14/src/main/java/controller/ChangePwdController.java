@@ -15,6 +15,13 @@ import spring.WrongIdPasswordException;
 @RequestMapping("/edit/changePassword")
 public class ChangePwdController {
     
+    /*
+     * 컨트롤러 : 실제 웹 브라우저 요청 처리 (클라이언트 요청 처리하기 위해 알맞은 기능 실행 -> 뷰에 결과 전달)
+     * - 클라이언트가 요구한 기능 실행
+     * - 응답 결과를 생성하는데 필요한 모델 생성
+     * - 응답 결과를 생성할 뷰 선택
+     */
+    
     private ChangePasswordService changePasswordService;
     
     public void setChangePasswordService(ChangePasswordService changePasswordService) {
@@ -35,7 +42,8 @@ public class ChangePwdController {
         AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
         try {
             changePasswordService.changePassword(authInfo.getEmail(), pwdCmd.getCurrentPassword(),
-                    pwdCmd.getNewPassword());
+                    pwdCmd.getNewPassword()); // 로직 실행을 서비스에 위임 (직접 수행 X)
+            // 웹 요청 파라미터를 커맨드 객체로 받고 프로퍼티를 서비스 메서드에 인자로 전달 가능
             return "edit/changedPwd";
         } catch (WrongIdPasswordException e) {
             errors.rejectValue("currentPassword", "notMatching");

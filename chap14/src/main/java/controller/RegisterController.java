@@ -47,7 +47,7 @@ public class RegisterController {
         }
         
         try {
-            memberRegisterService.regist(regReq);
+            memberRegisterService.regist(regReq); // 서비스 메서드의 입력 파라미터로 사용되는 타입을 커맨드 객체로 사용
             return "register/step3";
         } catch (DuplicateMemberException ex) {
             errors.rejectValue("email", "duplicate");

@@ -38,6 +38,7 @@
       </param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
+    <!-- 프론트 서블릿 : 웹 브라우저의 모든 요청 받는 창구 역할 (요청 분석 -> 알맞은 컨트롤러에 전달) -->
     <servlet-class>
       org.springframework.web.servlet.DispatcherServlet
     </servlet-class>

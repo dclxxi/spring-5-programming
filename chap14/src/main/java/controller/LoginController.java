@@ -53,7 +53,7 @@ public class LoginController {
             response.addCookie(rememberCookie);
             
             return "login/loginSuccess";
-        } catch (WrongIdPasswordException e) {
+        } catch (WrongIdPasswordException e) { // 서비스 -> 기능 실행 실패 시 익셉션 발생
             errors.reject("idPasswordNotMatching");
             return "login/loginForm";
         }
