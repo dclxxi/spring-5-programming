@@ -1,11 +1,13 @@
 package config;
 
+import controller.ApiExceptionAdvice;
 import controller.ChangePwdController;
 import controller.LoginController;
 import controller.LogoutController;
 import controller.MemberDetailController;
 import controller.MemberListController;
 import controller.RegisterController;
+import controller.RestMemberController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -64,5 +66,18 @@ public class ControllerConfig {
         MemberDetailController controller = new MemberDetailController();
         controller.setMemberDao(memberDao);
         return controller;
+    }
+    
+    @Bean
+    public RestMemberController restApi() {
+        RestMemberController cont = new RestMemberController();
+        cont.setMemberDao(memberDao);
+        cont.setRegisterService(memberRegSvc);
+        return cont;
+    }
+    
+    @Bean
+    public ApiExceptionAdvice apiExceptionAdvice() {
+        return new ApiExceptionAdvice();
     }
 }

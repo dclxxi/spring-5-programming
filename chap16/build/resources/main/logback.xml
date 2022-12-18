@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+  <appender class="ch.qos.logback.core.ConsoleAppender" name="stdout">
+    <encoder>
+      <pattern>%d %5p %c{2} - %m%n</pattern>
+    </encoder>
+  </appender>
+  <logger level="DEBUG" name="org.springframework.web.servlet"/>
+
+  <root level="INFO">
+    <appender-ref ref="stdout"/>
+  </root>
+</configuration>

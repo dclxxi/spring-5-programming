@@ -19,6 +19,10 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'ch.qos.logback:logback-classic:1.2.3'
     implementation 'javax.validation:validation-api:1.1.0.Final'
+    implementation 'org.hibernate:hibernate-validator:5.4.2.Final'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.4' // Jackson core와 Jackson Annotation 의존 추가
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.4' // data/time 지원 위한 Jackson 모듈
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.4'
 }
 
 wrapper {
